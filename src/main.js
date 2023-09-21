@@ -3,28 +3,32 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
-import about from "./src/pages/cadastro.js";
+
+import register from './pages/register/register';
 
 const main = document.querySelector('#teste');
+
 const init = () => {
     window.addEventListener("hashchange", () => {
+
         main.innerHTML = "";
-        switch(window.location.hash){
+        switch (window.location.hash) {
             case "#login":
                 main.appendChild(login());
                 break;
-            case "#about":
-                main.appendChild(about());
+            case "register":
+                main.appendChild(register());
                 break;
             case "#timeline":
                 main.appendChild(timeline());
                 break;
             default:
-                main.appendChild(about());
+                main.appendChild(register());
 
         }
-    }
+    })
 }
+
 window.addEventListener("load", () => {
-  main.appendChild(about());
-})
+    main.appendChild(about());
+    init();
