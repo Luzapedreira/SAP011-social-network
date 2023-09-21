@@ -4,3 +4,5 @@
 //   // aqui tu codigo
 //   console.log('Hola mundo!');
 // };
+
+import main from './main.js';

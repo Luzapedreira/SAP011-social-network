@@ -1,8 +1,9 @@
 export default () => {
-  const container = document.createElement('div');
+  const container = document.createElement("div");
+  container.classList.add("container");
 
-  const template = `
-    < h2 > "Um TESTE DE FUNCIONAMENTO"</h2> 
+  container.innerHTML = `
+  <h2> "Um TESTE DE FUNCIONAMENTO"</h2> 
   <p>Um teste de como vamos desenvolver a aplicação em SPA.</p>
   <h3>SERÁ QUE COMPLICA AINDA MAIS?</h3>
   <p>Só praticando para aprender.</p>

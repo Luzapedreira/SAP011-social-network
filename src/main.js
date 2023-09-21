@@ -4,7 +4,17 @@
 
 // myFunction();
 
-import register from './pages/register/register';
+import register from "./src/pages/register/register.js";
+import login from "./src/pages/login/login.js";
+import timeline from "./src/pages/timeline/timeline.js";
+
+export default {
+  register: register(),
+  login: login(),
+  timeline: timeline()
+}
+
+
 
 const main = document.querySelector('#teste');
 
@@ -31,4 +41,4 @@ const init = () => {
 
 window.addEventListener("load", () => {
     main.appendChild(about());
-    init();
+    init()});
