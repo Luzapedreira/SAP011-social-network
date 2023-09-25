@@ -12,7 +12,7 @@ export default () => {
     <form class='input-login'>
       <input type='email' class='input-login' placeholder='E-mail' id='email' required></input>
       <input type='password' class='input-login'placeholder='Password' id='password' required></input>
-      <button class='button-sign-in' id='sign-in'>Sign In</button>
+      <button class='sign-in-button' id='sign-in'>Sign In</button>
     </form>
     <button id='google' class='google-login'>
       <p>Continue com o Google</p>

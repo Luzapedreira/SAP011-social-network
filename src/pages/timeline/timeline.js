@@ -3,13 +3,14 @@ export default () => {
   container.classList.add('container');
 
   container.innerHTML = `
-    <section class="page-section">
-      <div class="section-text">
-        <h2> "Timeline"</h2> 
-        <p>Um teste de como vamos desenvolver a aplicação em SPA.</p>
-        <h3>SERÁ QUE COMPLICA AINDA MAIS?</h3>
-        <p>Só praticando para aprender.</p>
-      <div class="section-text">
+    <section class="timeline-section">
+      <div class='sign-ou' id='sign-out'
+      <button class='sign-out' id='sign-out alt='Sign Out'></button>
+      <textarea id='timeline-text' placeholder='Compartilhe a sua rotina.'></textarea>
+      <button id="post-button">Publicar</button>
+ 
+      <div id="post-container">
+      </div
     </section>
     `;
   return container;

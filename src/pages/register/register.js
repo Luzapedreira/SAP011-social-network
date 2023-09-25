@@ -16,7 +16,7 @@ export default () => {
     <p class='smallContent'>Enter at least 8 characters</p>
     <input type='password' id='password' class='input-register' placeholder='Password'></input>
     <input id='confirm-password' type='password' class='input-register' placeholder='Confirme sua senha'></input>
-    <button id='sign-up' class='button-sign-up'>Sign Up</button>
+    <button id='sign-up-button' class='sign-up-button'>Sign Up</button>
   </form>
   <button id='google' class='google-login'>
     <p>Continue com o Google</p>
