@@ -3,14 +3,21 @@ export default () => {
   container.classList.add('container');
 
   container.innerHTML = `
-    <section class="page-section">
-      <div class="section-text">
-        <h2> "Login"</h2> 
-        <p>Um teste de como vamos desenvolver a aplicação em SPA.</p>
-        <h3>SERÁ QUE COMPLICA AINDA MAIS?</h3>
-        <p>Só praticando para aprender.</p>
-      <div class="section-text">
+    <section class="about-login">
+      <p id='about-login'> Compartilhe aqui a sua rotina e inspire-se com os hábitos saudáveis de outras pessoas </p>
     </section>
+    <section class="page-login">
+      <h2>Sign in</h2>
+    </section>
+    <form class='input-login'>
+      <input type='email' class='input-login' placeholder='E-mail' id='email' required></input>
+      <input type='password' class='input-login'placeholder='Password' id='password' required></input>
+      <button class='button-sign-in' id='sign-in'>Sign In</button>
+    </form>
+    <button id='google' class='google-login'>
+      <p>Continue com o Google</p>
+    </button>
+
     `;
   return container;
 };

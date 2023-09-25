@@ -23,7 +23,7 @@ const init = () => {
       case '#login':
         main.appendChild(login());
         break;
-      case 'register':
+      case '#register':
         main.appendChild(register());
         break;
       case '#timeline':
@@ -36,6 +36,6 @@ const init = () => {
 };
 
 window.addEventListener('load', () => {
-  main.appendChild(login());
+  main.appendChild(register());
   init();
 });

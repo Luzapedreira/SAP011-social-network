@@ -3,14 +3,24 @@ export default () => {
   container.classList.add('container');
 
   container.innerHTML = `
-  <section class="page-section">
-    <div class="section-text">
-      <h2> "Um TESTE DE FUNCIONAMENTO"</h2> 
-      <p>Um teste de como vamos desenvolver a aplicação em SPA.</p>
-      <h3>SERÁ QUE COMPLICA AINDA MAIS?</h3>
-      <p>Só praticando para aprender.</p>
-    <div class="section-text">
+  <section class="about-register>
+    <p id='about-regiser'> Cadastre-se, compartilhe a sua rotina e inspire-se com os hábitos saudáveis de outras pessoas </p>
   </section>
+  <section class="page-register">
+      <h2>Register</h2>
+  </section>
+  <form class='input-register' id='input-register'>
+    <input type='text' id='name' class='input-register' placeholder='Nome Completo'></input>
+    <input type='text' id='nickname' class='input-register' placeholder='Como gosta de ser chamade'></input>
+    <input type='email' id='email' class='input-register' placeholder='E-mail'></input>
+    <p class='smallContent'>Enter at least 8 characters</p>
+    <input type='password' id='password' class='input-register' placeholder='Password'></input>
+    <input id='confirm-password' type='password' class='input-register' placeholder='Confirme sua senha'></input>
+    <button id='sign-up' class='button-sign-up'>Sign Up</button>
+  </form>
+  <button id='google' class='google-login'>
+    <p>Continue com o Google</p>
+  </button>
   `;
   return container;
 };

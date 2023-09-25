@@ -25,12 +25,15 @@ nav {
     padding: 10%;
 }
 
+#teste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+} */
+
 .footer{
     display: flex;
     justify-content: space-around;
     padding: 10px 10px;
-    position: absolute;
-    width: 100%;
-    position: fixed;
-    align-items: flex-start;
 }
