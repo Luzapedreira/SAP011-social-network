@@ -10,8 +10,9 @@ export default () => {
     <section class="page-login">
       <h2>Sign in</h2>
     </section>
-    <form class='input-login'>
-      <input type='email' class='input-login' placeholder='E-mail' id='email' required></input>
+    <form class='input-group'>
+      <input type='email' class='...' placeholder='Email address' id='email' required></input>
+      <label for='email' class='input-group__label'>...</label>
       <input type='password' class='input-login'placeholder='Password' id='password' required></input>
       <button class='sign-in-button' id='sign-in'>Sign In</button>
     </form>
