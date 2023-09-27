@@ -4,7 +4,7 @@ export default () => {
 
   container.innerHTML = `
     <section" class="about-login"  >
-    <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
+    
       <p id='about-login'> Compartilhe aqui a sua rotina e inspire-se com os hábitos saudáveis de outras pessoas </p>
     </section>
     <section class="page-login">
