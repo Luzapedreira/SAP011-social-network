@@ -36,6 +36,6 @@ const init = () => {
 };
 
 window.addEventListener('load', () => {
-  main.appendChild(login());
+  main.appendChild(register());
   init();
 });
