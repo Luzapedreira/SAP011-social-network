@@ -45,6 +45,10 @@ export default () => {
   <button id='google' class='google-login'>
     <p>Continue com o Google</p>
   </button>
+  <div class='login-input>
+      <label for='login-input' class='input-group__label'>Já tem uma conta?</label>
+      <button class='sign-in-button' id='login'>Login</button>
+    </div>
   `;
   return container;
 };

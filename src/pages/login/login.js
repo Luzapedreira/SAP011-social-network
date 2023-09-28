@@ -4,7 +4,6 @@ export default () => {
 
   container.innerHTML = `
     <section" class="about-login">
-      <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
       <p id='about-login'> Compartilhe aqui a sua rotina e inspire-se com os hábitos saudáveis de outras pessoas </p>
     </section>
     <section class="page-login">
@@ -25,10 +24,11 @@ export default () => {
       </div>
     </form>
     <button class='sign-in-button' id='sign-in'>Sign In</button>
-    <button id='google' class='google-login'>
-      <p>Continue com o Google</p>
-    </button>
-
+    <button id='google' class='google-login'><p>Continue with Google</p></button>
+    <div class='register-input>
+      <label for='register-input' class='input-group__label'>Não tem uma conta?</label>
+      <button class='sign-in-button' id='register'>Register</button>
+    </div>
     `;
   return container;
 };
