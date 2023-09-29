@@ -27,11 +27,11 @@ Foram elaborados dois tipos de protótipo com a finalidade de deixar a aplicaç�
 
 **Protótipo de baixa fidelidade**
 
-![baixa-fidelidade](image-5.png)
+![baixa-fidelidade](img-readme/prot-bx-fidelid.png)
 
 **Protótipo de alta fidelidade**
 
-![alta-fidelidade](<prot alt fid sn.png>)
+![alta-fidelidade](<img-readme/prot alt fid sn.png>)
 
 No que diz respeito ao público alvo, as principais usuárias da rede social são mulheres que procuram inspirar umas as outras compatilhando práticas de hábitos saudáveis.
 
@@ -62,9 +62,9 @@ As aplicações deste projeto são:
 
 
 ### 5. Acesso ao projeto
-Para acessar o ***fithub WOMAN*** clique aqui: (add link após deply no github pages).
+Para acessar o ***fithub WOMAN*** clique aqui: (add link após deploy no github pages).
 ### 6. Tecnologias utilizadas
-![html](image.png) ![css](image-1.png) ![js](image-2.png) ![git](image-3.png) ![github](image-4.png) ***(add  logo firebase).***
+![html](img-readme/html-icon.png) ![css](img-readme/css-icon.png) ![js](img-readme/js-icon.png) ![git](img-readme/git-icon.png) ![github](img-readme/gitHub-icon.png) ***(add  logo firebase).***
 
 ### 7. Desenvolvedoras
 Dara Coelho  [LinkedIn](https://www.linkedin.com/in/dara-coelho/) | [GitHub](https://github.com/Dahbarbara)

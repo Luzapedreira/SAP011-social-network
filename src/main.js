@@ -14,28 +14,37 @@ export default {
   timeline: timeline(),
 };
 
-const main = document.querySelector('#teste');
+document.addEventListener('', async () => {
+  const main = document.querySelector('#teste');
+  let logged = false;
 
-const init = () => {
-  window.addEventListener('hashchange', () => {
+  const init = async () => {
     main.innerHTML = '';
-    switch (window.location.hash) {
+    const pages = window.location.hash;
+
+    switch (pages) {
       case '#login':
-        main.appendChild(login());
+        if (!logged) {
+          main.appendChild(login());
+        } else {
+          window.location.hash = '#timeline';
+        }
         break;
       case '#register':
         main.appendChild(register());
         break;
       case '#timeline':
-        main.appendChild(timeline());
+        if (logged) {
+          main.appendChild(timeline());
+        } else {
+          window.location.hash = '#login';
+        }
         break;
       default:
-        main.appendChild(register());
-    }
-  });
-};
+        window.location.hash = '#login';
+        break;
+    };
+  };
 
-window.addEventListener('load', () => {
-  main.appendChild(register());
-  init();
-});
+  window.addEventListener('hashchange', init);
+  window.addEventListener('load', init);
