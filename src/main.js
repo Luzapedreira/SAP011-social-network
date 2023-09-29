@@ -1,20 +1,23 @@
-// Este es el punto de entrada de tu aplicacion
-
-// import { myFunction } from './lib/index.js';
-
-// myFunction();
-
 import register from './pages/register/register.js';
 import login from './pages/login/login.js';
 import timeline from './pages/timeline/timeline.js';
 
-export default {
-  register: register(),
-  login: login(),
-  timeline: timeline(),
-};
-
 const main = document.querySelector('#teste');
+export function registerPage() {
+  const content = document.createElement('div');
+  content.textContent = 'Página de Registro';
+  return content;
+}
+export function loginPage() {
+  const content = document.createElement('div');
+  content.textContent = 'Página de Login';
+  return content;
+}
+export function timelinePage() {
+  const content = document.createElement('div');
+  content.textContent = 'Página da Linha do Tempo';
+  return content;
+}
 
 const init = () => {
   window.addEventListener('hashchange', () => {
