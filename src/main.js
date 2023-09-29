@@ -14,7 +14,7 @@ export default {
   timeline: timeline(),
 };
 
-document.addEventListener('', async () => {
+document.addEventListener('DOM', async () => {
   const main = document.querySelector('#teste');
   let logged = false;
 
