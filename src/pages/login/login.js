@@ -59,9 +59,6 @@ container.innerHTML = `
     </button>
 
     `;
-  return container;
-};
-
 
 // Adicione o container à página
 document.body.appendChild(container);
