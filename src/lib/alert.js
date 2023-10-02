@@ -14,8 +14,8 @@ export default (message) => {
   // Adiciona o elemento de alerta à página (como filho do <body>)
   body.appendChild(alert);
 
-  // Define um temporizador para remover o elemento de alerta após 4 segundos (4000 milissegundos)
+  // Define um temporizador para remover o elemento de alerta após 2 segundos (2000 milissegundos)
   setTimeout(() => {
     body.removeChild(alert);
-  }, 4000); // 3000 milissegundos = 4 segundos
+  }, 2000); // 20000 milissegundos = 2 segundos
 };
