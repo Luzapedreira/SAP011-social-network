@@ -7,6 +7,11 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.register-page{
+  border-radius: 10px;
+  border-color: #757575;
+}
+
 .input-register { 
   position:relative; 
   margin-bottom:30px;
