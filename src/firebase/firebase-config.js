@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: 'AIzaSyAV6Ne5cuZqdugVhDFr-amJLB84rDBwdpo',
   authDomain: 'fithub-woman.firebaseapp.com',
   databaseURL: 'https://fithub-woman-default-rtdb.firebaseio.com',
