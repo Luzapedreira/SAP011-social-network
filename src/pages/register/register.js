@@ -9,6 +9,7 @@ export default () => {
     </section>
     <section class='page-register'>
       <h2>Register</h2>
+      Register and be part of our network
     </section>
     <form class='input-register' id='input-register'>
       <div class='forms'>
@@ -55,8 +56,8 @@ export default () => {
   return container;
 };
 // Função ir para a página de login
-function goLoginPage() {
-  window.location.href = 'pages/login/login.js';
-}
+// function goLoginPage() {
+//   window.location.href = 'pages/login/login.js';
+// }
 
-document.getElementById('sign-in-button').addEventListener('click', goLoginPage);
+// document.getElementById('sign-in-button').addEventListener('click', goLoginPage);

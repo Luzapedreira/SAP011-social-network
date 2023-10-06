@@ -2,6 +2,8 @@ import register from './pages/register/register.js';
 import login from './pages/login/login.js';
 import timeline from './pages/timeline/timeline.js';
 
+let logged = false;
+
 const main = document.querySelector('#teste');
 export function registerPage() {
   const content = document.createElement('div');

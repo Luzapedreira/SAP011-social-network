@@ -1,11 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-// eslint-disable-next-line import/no-unresolved
-import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js';
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: 'AIzaSyAV6Ne5cuZqdugVhDFr-amJLB84rDBwdpo',
   authDomain: 'fithub-woman.firebaseapp.com',
   databaseURL: 'https://fithub-woman-default-rtdb.firebaseio.com',
@@ -17,6 +12,3 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
-export const analytics = getAnalytics(app);
