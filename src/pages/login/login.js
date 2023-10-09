@@ -1,6 +1,10 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 // import  from '../../firebase/firebase-config.js';
 import { firebaseConfig } from '../../firebase/firebase-config.js';
+<<<<<<< HEAD
+=======
+// import 'firebase/auth'; // Importe a parte de autenticação do Firebase
+>>>>>>> 49dcaa4cf0ba3559641122058ef15d1cf3b806ea
 
 // Função para fazer login com o Google
 function LoginGoogle() {
@@ -19,6 +23,7 @@ function LoginGoogle() {
       console.error('Erro durante o login com o Google:', error);
     });
 }
+<<<<<<< HEAD
 
 // Resto do seu código HTML e lógica permanece inalterado...
 
@@ -47,3 +52,42 @@ const googleButton = container.querySelector('#google');
 googleButton.addEventListener('click', () => {
   LoginGoogle();
 });
+=======
+// Resto do seu código HTML e lógica permanece inalterado...
+
+export default () => {
+  const container = document.createElement('main');
+  container.classList.add('main');
+  container.innerHTML = `
+    <section" class="about-login">
+     <p id='about-login'> Compartilhe aqui a sua rotina e inspire-se com os hábitos saudáveis de outras pessoas </p>
+    </section>
+    <section class="page-login">
+      <h2>Sign in</h2>
+    </section>
+    <form class='input-group'>
+      <div class='forms'>
+        <input type='email' class='...' id='email' required></input>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label for='email' class='input-group__label'>E-mail address</label>
+      </div>
+      <div class='forms'>
+        <input type='password' class='input-login' id='password' required></input>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label for='password' class='input-group__label'>Password</label>
+      </div>
+    </form>
+    <button class='sign-in-button' id='sign-in'>Sign In</button>
+    <button id='google' class='google-login'>
+      <p>Continue com o Google</p>
+    </button> `;
+  // Adicione o evento de clique ao botão "google" para fazer login com o Google
+  const googleButton = container.querySelector('#google');
+  googleButton.addEventListener('click', () => {
+    LoginGoogle();
+  });
+  return container;
+};
+>>>>>>> 49dcaa4cf0ba3559641122058ef15d1cf3b806ea

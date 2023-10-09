@@ -10,7 +10,7 @@ export default () => {
       <button id="post-button">Publicar</button>
  
       <div id="post-container">
-      </div
+      </div>
     </section>
     `;
   return container;

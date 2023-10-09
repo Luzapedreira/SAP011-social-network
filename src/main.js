@@ -2,6 +2,8 @@ import register from './pages/register/register.js';
 import login from './pages/login/login.js';
 import timeline from './pages/timeline/timeline.js';
 
+let logged = false;
+
 const main = document.querySelector('#teste');
 export function registerPage() {
   const content = document.createElement('div');
@@ -19,26 +21,33 @@ export function timelinePage() {
   return content;
 }
 
-const init = () => {
-  window.addEventListener('hashchange', () => {
-    main.innerHTML = '';
-    switch (window.location.hash) {
-      case '#login':
+const init = async () => {
+  main.innerHTML = '';
+  const pages = window.location.hash;
+
+  switch (pages) {
+    case '#login':
+      if (!logged) {
         main.appendChild(login());
-        break;
-      case '#register':
-        main.appendChild(register());
-        break;
-      case '#timeline':
+      } else {
+        window.location.hash = '#timeline';
+      }
+      break;
+    case '#register':
+      main.appendChild(register());
+      break;
+    case '#timeline':
+      if (logged) {
         main.appendChild(timeline());
-        break;
-      default:
-        main.appendChild(register());
-    }
-  });
+      } else {
+        window.location.hash = '#login';
+      }
+      break;
+    default:
+      window.location.hash = '#login';
+      break;
+  };
 };
 
-window.addEventListener('load', () => {
-  main.appendChild(login());
-  init();
-});
+window.addEventListener('hashchange', init);
+window.addEventListener('load', init);
