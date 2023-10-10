@@ -4,7 +4,6 @@
 
 // publicarBtn.addEventListener('click', () => {
 //   const texto = ......... .value;
-  
 //   createPost(texto, idUser);
 // });
 export default () => {

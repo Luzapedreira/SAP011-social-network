@@ -1,3 +1,6 @@
+import { newUser } from '../../firebase/firebase-auth.js';
+import { userData } from '../../firebase/firebase-store.js';
+
 export default () => {
   const container = document.createElement('div');
   container.classList.add('container');
@@ -9,7 +12,6 @@ export default () => {
     </section>
     <section class='page-register'>
       <h2>Register</h2>
-      Register and be part of our network
     </section>
     <form class='input-register' id='input-register'>
       <div class='forms'>
@@ -36,17 +38,8 @@ export default () => {
         <input type='password' id='password' class='password' required></input>
         <label for='password' class='input-group__label'>Password</label>
       </div>
-      <div class='forms'>
-        <span class='highlight'></span>
-        <span class='bar'></span>  
-        <input id='confirm-password' type='password' class='password' required></input>
-        <label for='confirm-password' class='input-group__label'>Confirme password</label>
-      </div>
       <button id='sign-up-button' class='sign-up-button'>Sign Up</button>
     </form>
-    <button id='google' class='google-login'>
-      <p>Continue com o Google</p>
-    </button>
     <section class='login-input'>
       <p>Já tem uma conta?</p>
       <button class='sign-in-button' id='login'>Login</button>
@@ -64,7 +57,7 @@ export default () => {
     if (name.value === '' || nickname.value === '' || email.value === '' || password.value === '') {
       alert('Please fill in all fields');
     } else {
-      createUser(email.value, password.value, name.value, nickname.value)
+      newUser(email.value, password.value, name.value, nickname.value)
         .then(() => userData(name.value, nickname.value, email.value))
         .then(() => {
           window.location.hash = '#login';
