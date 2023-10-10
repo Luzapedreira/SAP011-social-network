@@ -36,24 +36,29 @@ export default () => {
       <p>Ainda não tem uma conta?</p>
       <button class='sign-up-button' id='register'>Register</button>
     </section>`;
-  // Adicione o evento de clique ao botão "google" para fazer login com o Google
+
+  const goRegister = container.querySelector('#register');
+  goRegister.addEventListener('click', () => {
+    window.location.hash = '#register';
+  });
+  // Função para fazer login com o Google
+  function LoginGoogle() {
+    const provider = new GoogleAuthProvider(firebaseConfig);
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log('Usuário logado com o Google:', user);
+      })
+      .catch((error) => {
+        console.error('Erro durante o login com o Google:', error);
+      });
+  }
+
   const googleButton = container.querySelector('#google');
   googleButton.addEventListener('click', () => {
     LoginGoogle();
   });
+
   return container;
 };
-
-// Função para fazer login com o Google
-function LoginGoogle() {
-  const provider = new GoogleAuthProvider(firebaseConfig);
-  const auth = getAuth();
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      console.log('Usuário logado com o Google:', user);
-    })
-    .catch((error) => {
-      console.error('Erro durante o login com o Google:', error);
-    });
-}

@@ -15,13 +15,13 @@ export default () => {
       <div class='forms'>
         <span class='highlight'></span>
         <span class='bar'></span>
-        <input type='text' id='name' class='input-register' required></input>
+        <input type='text' id='name' class='full-name' required></input>
         <label for='name' class='input-group__label'>Full name</label>
       </div>
       <div class='forms'>
         <span class='highlight'></span>
         <span class="bar"></span>
-        <input type='text' id='nickname' class='input-register' required></input>
+        <input type='text' id='nickname' class='nickname' required></input>
         <label for='nickname' class='input-group__label'>Best name</label>
       </div>
       <div class='forms'>
@@ -33,13 +33,13 @@ export default () => {
       <div class='forms'>
         <span class='highlight'></span>
         <span class='bar'></span>   
-        <input type='password' id='password' class='input-register' required></input>
+        <input type='password' id='password' class='password' required></input>
         <label for='password' class='input-group__label'>Password</label>
       </div>
       <div class='forms'>
         <span class='highlight'></span>
         <span class='bar'></span>  
-        <input id='confirm-password' type='password' class='input-register' required></input>
+        <input id='confirm-password' type='password' class='password' required></input>
         <label for='confirm-password' class='input-group__label'>Confirme password</label>
       </div>
       <button id='sign-up-button' class='sign-up-button'>Sign Up</button>
@@ -47,11 +47,45 @@ export default () => {
     <button id='google' class='google-login'>
       <p>Continue com o Google</p>
     </button>
-    <div class='login-input'>
-      <label for='login-input' class='input-group__label'>Já tem uma conta?</label>
-      <button class='sign-in-button' id='sign-in-button'>Login</button>
-    </div>
+    <section class='login-input'>
+      <p>Já tem uma conta?</p>
+      <button class='sign-in-button' id='login'>Login</button>
+    </section>;
   </article>
   `;
+
+  const register = container.querySelector('#sign-up-button');
+  register.addEventListener('click', () => {
+    const name = container.querySelector('.full-name');
+    const nickname = container.querySelector('.nickname');
+    const email = container.querySelector('.email');
+    const password = container.querySelector('.password');
+
+    if (name.value === '' || nickname.value === '' || email.value === '' || password.value === '') {
+      alert('Please fill in all fields');
+    } else {
+      createUser(email.value, password.value, name.value, nickname.value)
+        .then(() => userData(name.value, nickname.value, email.value))
+        .then(() => {
+          window.location.hash = '#login';
+        })
+        .catch((error) => {
+          console.error(error.message);
+          if (error.message === 'Firebase: Error (auth/invalid-email).') {
+            alert('Invalid email!');
+          } else if (error.message === ' Firebase: Error (auth/internal-error).') {
+            alert('Invalid password');
+          }
+          alert('Error when registering, checking fields');
+        });
+    }
+
+    window.location.hash = '#login';
+  });
+
+  const returnLogin = container.querySelector('#login');
+  returnLogin.addEventListener('click', () => {
+    window.location.hash = '#login';
+  });
   return container;
 };
