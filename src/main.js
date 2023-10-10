@@ -46,7 +46,7 @@ const init = async () => {
     default:
       window.location.hash = '#login';
       break;
-  };
+  }
 };
 
 window.addEventListener('hashchange', init);

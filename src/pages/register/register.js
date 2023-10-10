@@ -55,9 +55,3 @@ export default () => {
   `;
   return container;
 };
-// Função ir para a página de login
-// function goLoginPage() {
-//   window.location.href = 'pages/login/login.js';
-// }
-
-// document.getElementById('sign-in-button').addEventListener('click', goLoginPage);

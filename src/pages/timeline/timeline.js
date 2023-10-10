@@ -1,3 +1,12 @@
+// import { createPost } from './firestore.js';
+
+// const publicarBtn = ..........;
+
+// publicarBtn.addEventListener('click', () => {
+//   const texto = ......... .value;
+  
+//   createPost(texto, idUser);
+// });
 export default () => {
   const container = document.createElement('div');
   container.classList.add('container');
