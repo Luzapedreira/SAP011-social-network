@@ -38,7 +38,7 @@ export default () => {
         <input type='password' id='password' class='password' required></input>
         <label for='password' class='input-group__label'>Password</label>
       </div>
-      <button id='sign-up-button' class='sign-up-button'>Sign Up</button>
+      <button type='submit' id='sign-up-button' class='sign-up-button'>Sign Up</button>
     </form>
     <section class='login-input'>
       <p>Já tem uma conta?</p>
@@ -49,10 +49,10 @@ export default () => {
 
   const register = container.querySelector('#sign-up-button');
   register.addEventListener('click', () => {
-    const name = container.querySelector('.full-name');
-    const nickname = container.querySelector('.nickname');
-    const email = container.querySelector('.email');
-    const password = container.querySelector('.password');
+    const name = container.querySelector('.full-name').value;
+    const nickname = container.querySelector('.nickname').value;
+    const email = container.querySelector('.email').value;
+    const password = container.querySelector('.password').value;
 
     if (name.value === '' || nickname.value === '' || email.value === '' || password.value === '') {
       alert('Please fill in all fields');

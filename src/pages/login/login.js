@@ -27,7 +27,7 @@ export default () => {
         <a href='#forgot' id='btn-recover-password'>Forgot your password?</a>
       </div>
     </form>
-    <button class='sign-in-button' id='sign-in'>Sign In</button>
+    <button type='submit' class='sign-in-button' id='sign-in'>Sign In</button>
     <section id="loginGoogle">
       <button class = "button-login-google" id="google"> Entre com Google</button>
       <img id= "google-icon" alt="google-icon">

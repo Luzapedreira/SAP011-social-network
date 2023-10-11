@@ -11,10 +11,11 @@ import {
   query,
   orderBy,
 } from 'firebase/firestore';
-import { app, db, auth } from './firebase-config.js';
+import { db } from './firebase-config.js';
 
 export const userData = async (name) => addDoc(collection(db, 'infos-add'), {
   nome: name,
+  bestName: nickname,
 });
 
 // async function createPost(text, idUser) {
