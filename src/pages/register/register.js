@@ -1,5 +1,5 @@
 import { newUser } from '../../firebase/firebase-auth.js';
-import { userData } from '../../firebase/firebase-store.js';
+import { users } from '../../firebase/firebase-store.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -43,7 +43,7 @@ export default () => {
     <section class='login-input'>
       <p>Já tem uma conta?</p>
       <button class='sign-in-button' id='login'>Login</button>
-    </section>;
+    </section>  
   </article>
   `;
 
@@ -55,20 +55,24 @@ export default () => {
     const password = container.querySelector('.password').value;
 
     if (name.value === '' || nickname.value === '' || email.value === '' || password.value === '') {
+      // eslint-disable-next-line no-alert
       alert('Please fill in all fields');
     } else {
       newUser(email.value, password.value, name.value, nickname.value)
-        .then(() => userData(name.value, nickname.value, email.value))
+        .then(() => users(name.value, nickname.value, email.value))
         .then(() => {
           window.location.hash = '#login';
         })
         .catch((error) => {
           console.error(error.message);
           if (error.message === 'Firebase: Error (auth/invalid-email).') {
+            // eslint-disable-next-line no-alert
             alert('Invalid email!');
           } else if (error.message === ' Firebase: Error (auth/internal-error).') {
+            // eslint-disable-next-line no-alert
             alert('Invalid password');
           }
+          // eslint-disable-next-line no-alert
           alert('Error when registering, checking fields');
         });
     }

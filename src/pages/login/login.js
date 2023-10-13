@@ -1,5 +1,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { firebaseConfig } from '../../firebase/firebase-config.js';
+import { login } from '../../firebase/firebase-auth.js';
 
 export default () => {
   const container = document.createElement('main');
@@ -24,25 +25,25 @@ export default () => {
         <span class="highlight"></span>
         <span class="bar"></span>
         <label for='password' class='input-group__label'>Password</label>
-        <a href='#forgot' id='btn-recover-password'>Forgot your password?</a>
+       <a href='#forgot' id='btn-recover-password'>Forgot your password?</a>
       </div>
     </form>
-    <button type='submit' class='sign-in-button' id='sign-in'>Sign In</button>
-    <section id="loginGoogle">
-      <button class = "button-login-google" id="google"> Entre com Google</button>
-      <img id= "google-icon" alt="google-icon">
+    <button type='button' class='sign-in-button' id='sign-in'>Sign In</button>
+    <section id='loginGoogle'>
+      <button class = 'button-login-google' id='google'> Entre com Google</button>
+      <img id= 'google-icon' alt='google-icon'>
     </section>          
-    <section id="register">
+    <section id='register'>
       <p>Ainda não tem uma conta?</p>
       <button class='sign-up-button' id='register'>Register</button>
-    </section>`;
-
+    </section>
+    `;
   const goRegister = container.querySelector('#register');
   goRegister.addEventListener('click', () => {
     window.location.hash = '#register';
   });
   // Função para fazer login com o Google
-  function LoginGoogle() {
+  function loginGoogle() {
     const provider = new GoogleAuthProvider(firebaseConfig);
     const auth = getAuth();
     signInWithPopup(auth, provider)
@@ -57,7 +58,27 @@ export default () => {
 
   const googleButton = container.querySelector('#google');
   googleButton.addEventListener('click', () => {
-    LoginGoogle();
+    loginGoogle();
+  });
+
+  const enterLogin = container.querySelector('#sign-in'); // Seleciona o botão de login.
+  enterLogin.addEventListener('click', () => {
+    const email = container.querySelector('#email'); // Captura o campo de e-mail.
+    const password = container.querySelector('#password');
+    // window.location.hash = "#timeline"; // Vai para a âncora "#timeline" em caso de sucesso.
+
+    login(email.value, password.value)
+      .then(() => {
+        window.location.hash = '#timeline'; // Redireciona para a âncora "#timeline" em caso de sucesso.
+      })
+      .catch((error) => {
+        if (error.message === 'Firebase: Error (auth/user-not-found).') {
+          alert('User not found'); // Exibe um alerta se o usuário não for encontrado.
+        } else if (error.message === 'Firebase: Error (auth/wrong-password)') {
+          alert('Password not found'); // Exibe um alerta se a senha estiver incorreta.
+        }
+        console.error(error);
+      });
   });
 
   return container;

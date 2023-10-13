@@ -10,10 +10,10 @@ import {
 import { auth } from './firebase-config.js';
 
 // eslint-disable-next-line max-len
-export const newUser = async (name, email, password) => createUserWithEmailAndPassword(auth, email, password)
+export const newUser = async (email, nickname, password) => createUserWithEmailAndPassword(auth, email, password)
   .then(async (userCredential) => {
     const user = userCredential.user;
-    await updateProfile(user, { displayName: name });
+    await updateProfile(user, { displayName: nickname });
   });
 
 export const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
