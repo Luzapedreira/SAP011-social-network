@@ -51,17 +51,17 @@ export default () => {
   register.addEventListener('click', () => {
     const name = container.querySelector('.full-name').value;
     const nickname = container.querySelector('.nickname').value;
-    const email = container.querySelector('.email').value;
+    const email = container.querySelector('#email').value;
     const password = container.querySelector('.password').value;
 
     if (name.value === '' || nickname.value === '' || email.value === '' || password.value === '') {
       // eslint-disable-next-line no-alert
       alert('Please fill in all fields');
     } else {
-      newUser(email.value, password.value, name.value, nickname.value)
-        .then(() => users(name.value, nickname.value, email.value))
+      newUser(email, password, name, nickname)
+        .then(() => users(name, nickname, email))
         .then(() => {
-          window.location.hash = '#login';
+          window.location.hash = '#timeline';
         })
         .catch((error) => {
           console.error(error.message);

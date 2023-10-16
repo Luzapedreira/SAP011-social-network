@@ -6,7 +6,7 @@ export default () => {
   const container = document.createElement('main');
   container.classList.add('main');
   container.innerHTML = `
-    <section" class="about-login">
+    <section class="about-login">
      <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
     </section>
     <section class="page-login">
@@ -31,13 +31,14 @@ export default () => {
     <button type='button' class='sign-in-button' id='sign-in'>Sign In</button>
     <section id='loginGoogle'>
       <button class = 'button-login-google' id='google'> Entre com Google</button>
+      
       <img id= 'google-icon' alt='google-icon'>
     </section>          
     <section id='register'>
-      <p>Ainda não tem uma conta?</p>
-      <button class='sign-up-button' id='register'>Register</button>
-    </section>
-    `;
+        <p>Ainda não tem uma conta?</p>
+        <button class='sign-up-button' id='register'>Register</button>
+      </section>
+      `;
   const goRegister = container.querySelector('#register');
   goRegister.addEventListener('click', () => {
     window.location.hash = '#register';
@@ -59,12 +60,14 @@ export default () => {
   const googleButton = container.querySelector('#google');
   googleButton.addEventListener('click', () => {
     loginGoogle();
+    window.location.hash = '#timeline';
   });
 
   const enterLogin = container.querySelector('#sign-in'); // Seleciona o botão de login.
   enterLogin.addEventListener('click', () => {
     const email = container.querySelector('#email'); // Captura o campo de e-mail.
     const password = container.querySelector('#password');
+    window.location.hash = '#timeline';
     // window.location.hash = "#timeline"; // Vai para a âncora "#timeline" em caso de sucesso.
 
     login(email.value, password.value)

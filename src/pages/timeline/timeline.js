@@ -19,6 +19,7 @@ export default async () => {
     </header>
 
     <main>
+    palomita  
     </main>
     `;
 
@@ -53,6 +54,7 @@ export default async () => {
       <div class="button-modal">
        <button id="cancel-modal">Cancel</button>
         <button id="delete-modal">Delete</button>
+      <button id="newpost">New</button>
       </div>
     </div>  
   `;
@@ -122,7 +124,7 @@ export default async () => {
     userActions.className = 'user-actions';
 
     const likeAction = document.createElement('div');
-    likeAction.className = 'like-actions like-actions-right';${publish - icon.pn}
+    likeAction.className = 'like-actions like-actions-right';
 
     const starButton = document.createElement('button');
     starButton.innerHTML = '<i class= ></i>';
@@ -250,39 +252,24 @@ export default async () => {
 
         if (!hasLiked) {
           await awesome(postId, idUserAtual);
-          const starCount = starButton.nextElementSibling;
-          if (starCount) {
-            const currentCount = parseInt(starCount.textContent, 10);
-            if (!Number.isNaN(currentCount)) {
-              const newCount = currentCount + 1;
-              starCount.textContent = newCount.toString(); // Atualiza o contador de likes
-            } else {
-              console.error(
-                'O conteúdo do contador de curtidas não é um número válido:',
-                starCount.textContent,
-              );
-            }
-          } else {
-            console.error('Elemento do contador de curtidas não encontrado.');
-          }
         } else {
           await noAwesome(postId, idUserAtual);
-          console.log('Descurtiu o post');
-          const starCount = starButton.nextElementSibling;
-          if (starCount) {
-            const currentCount = parseInt(starCount.textContent, 10);
-            if (!Number.isNaN(currentCount)) {
-              const newCount = currentCount - 1;
-              starCount.textContent = newCount.toString(); // Atualiza o contador de likes
-            } else {
-              console.error(
-                'O conteúdo do contador de curtidas não é um número válido:',
-                starCount.textContent,
-              );
-            }
+        }
+
+        // Procura o elemento .like-count no contêiner do post atual
+        const postContainer = starButton.closest('.post');
+        const starCount = postContainer.querySelector('.like-count');
+
+        if (starCount) {
+          const currentCount = parseInt(starCount.textContent, 10);
+          if (!Number.isNaN(currentCount)) {
+            const newCount = hasLiked ? currentCount - 1 : currentCount + 1;
+            starCount.textContent = newCount.toString(); // Atualiza o contador de likes
           } else {
-            console.error('Elemento do contador de curtidas não encontrado.');
+            console.error('O conteúdo do contador de curtidas não é um número válido:', starCount.textContent);
           }
+        } else {
+          console.error('Elemento do contador de curtidas não encontrado no post.');
         }
       } catch (error) {
         console.error('Erro ao curtir o post', error);
@@ -411,5 +398,11 @@ export default async () => {
   const logoutButtonDesktop = container.querySelector('.btn-logout-desktop');
   logoutButtonDesktop.addEventListener('click', logout);
 
+  const newPostButton = container.querySelector('#newpost');
+  newPostButton.addEventListener('click', () => {
+    createNewPost(username, userId);
+    modalContainer.remove();
+  });
+
   return container;
-};
+} 
