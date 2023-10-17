@@ -47,7 +47,7 @@ export default async () => {
 
   const modalDelete = () => {
     const templateDelete = `
-    <div id="fade" class="hide"></div>
+  };<div id="fade" class="hide"></div>
     <div id="modal" class="hide">
       <p class="message-delete">Are you sure?</p> 
       <div class="button-modal">
@@ -122,7 +122,7 @@ export default async () => {
     userActions.className = 'user-actions';
 
     const likeAction = document.createElement('div');
-    likeAction.className = 'like-actions like-actions-right';${publish - icon.pn}
+    likeAction.className = 'like-actions like-actions-right';
 
     const starButton = document.createElement('button');
     starButton.innerHTML = '<i class= ></i>';
