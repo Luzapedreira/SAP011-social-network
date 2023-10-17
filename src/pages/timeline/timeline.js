@@ -392,17 +392,17 @@ export default async () => {
       });
   }
 
-  const logoutButton = container.querySelector('.btn-logout');
-  logoutButton.addEventListener('click', logout);
+  // const logoutButton = container.querySelector('.btn-logout');
+  // logoutButton.addEventListener('click', logout);
 
-  const logoutButtonDesktop = container.querySelector('.btn-logout-desktop');
-  logoutButtonDesktop.addEventListener('click', logout);
+  // const logoutButtonDesktop = container.querySelector('.btn-logout-desktop');
+  // logoutButtonDesktop.addEventListener('click', logout);
 
-  const newPostButton = container.querySelector('#newpost');
-  newPostButton.addEventListener('click', () => {
-    createNewPost(username, userId);
-    modalContainer.remove();
-  });
+  // const newPostButton = container.querySelector('#newpost');
+  // newPostButton.addEventListener('click', () => {
+  //   createNewPost(username, userId);
+  //   modalContainer.remove();
+  // });
 
   return container;
 } 

@@ -33,7 +33,7 @@ const init = async () => {
       break;
     case '#timeline':
 
-      main.appendChild(timeline());
+      main.appendChild(await timeline());
 
       break;
     default:
