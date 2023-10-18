@@ -1,9 +1,9 @@
 import {
-  doc, onSnapshot,
   getFirestore,
   collection,
   addDoc,
   getDocs,
+  doc,
   updateDoc,
   arrayUnion,
   arrayRemove,
@@ -14,11 +14,6 @@ import {
 import { db } from './firebase-config.js';
 
 // const db = getFirestore(app);
-
-const unsub = onSnapshot(doc(db, "posts", "SF"), (doc) => {
-  console.log("Current data: ", doc.data());
-});
-
 
 export const users = async (name) => addDoc(collection(db, 'infos-add'), {
   nome: name,
