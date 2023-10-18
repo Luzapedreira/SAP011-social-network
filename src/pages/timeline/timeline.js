@@ -15,13 +15,64 @@ export default async () => {
   container.classList.add('container');
 
   container.innerHTML = `
-    <header>
-    </header>
+  <div class="header">
+    <div class="lupa">
+    <button id="search-button">
+        <img src="search-icon.png" alt="Ícone de pesquisa">
+      </button>
+    </div>
+    <div class="logout-button">
+      <button id="logout-button">
+        <img src="logout-icon.png" alt="Ícone de sair">
+      </button>
+    </div>
+    <div class="write-post-box">
+      <textarea id="post-input" placeholder="Escreva seu post"></textarea>
+      <button id="post-button">
+        Postar
+      </button>
+    </div>
+  </div>
+  `
+  const logoutButton = container.querySelector('#logout-button');
+  logoutButton.addEventListener('click', logout);
 
-    <main>
-    palomita  
-    </main>
-    `;
+  const postInput = container.querySelector('#post-input');
+  const postButton = container.querySelector('#post-button');
+
+  postButton.addEventListener('click', async () => {
+    const contentPost = postInput.value;
+
+    if (!contentPost) {
+      alert('Preencha seu post antes de postar.');
+      return;
+    }
+
+    const user = auth.currentUser;
+    const userName = user.displayName;
+    const userId = user.uid;
+
+    try {
+      const newPostData = {
+        userName,
+        idUser: userId,
+        post: contentPost,
+        timestamp: new Date(),
+      };
+
+      await postUser(
+        newPostData.post,
+        newPostData.userName,
+        newPostData.idUser
+      );
+
+      renderPost(newPostData);
+      postInput.value = ''; // Limpa o campo de texto após a postagem
+    } catch (error) {
+      console.error('Erro ao criar postagem', error);
+      alert('Erro ao criar postagem. Tente novamente mais tarde.');
+    }
+  });
 
   const auth = getAuth();
   const existingPosts = await postViewer();

@@ -6,6 +6,8 @@ export default () => {
   const container = document.createElement('main');
   container.classList.add('main');
   container.innerHTML = `
+   <head>  <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
+ </head>
     <section class="about-login">
      <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
     </section>

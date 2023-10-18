@@ -6,6 +6,7 @@ export default () => {
   container.classList.add('container');
 
   container.innerHTML = `
+  
   <article class='register-page'>
     <section class='about-register'>
       <p id='about-regiser'> Cadastre-se, compartilhe a sua rotina e inspire-se com os hábitos saudáveis de outras pessoas </p>
