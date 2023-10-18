@@ -15,10 +15,15 @@ main {
   text-align: center;
 }
 
-.logo {
+body{
+  background-color: #e2f0fd;
+}
+
+#figure {
   width: 200px;
   margin-top: 30px;
   border-radius: 15%;
+
 }
 
 .page-login {
@@ -161,6 +166,12 @@ input:focus ~ .highlight {
   text-align: center;
   cursor: pointer;
 	transition: outline-offset .25s;
+  background-color: #ffff;
+}
+
+.button-login-google:hover{
+  color: #bf1922;
+  transition: outline-offset .25s
 }
 
 img{

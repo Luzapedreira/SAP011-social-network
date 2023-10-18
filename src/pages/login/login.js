@@ -11,7 +11,7 @@ export default () => {
      <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect<br> with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
     </section>
     <section class="page-login">
-      <h4 class='page-login'>Welcome to FitHub Woman. Please, connect.</h4>
+      <h4 class='page-login'>Welcome to FitHub Woman. Please, connect:</h4>
     </section>
     <form class='input-group'>
       <div class='forms'>
