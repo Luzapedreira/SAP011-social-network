@@ -7,14 +7,36 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  margin-top: 30px;
+  border-radius: 15%;
+}
+
 .page-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 50px 50px 50px;
+}
+
+/*.page-login {
   border-radius: 10px;
   border-color: #757575;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 5vw;
-}
+}*/
 
 h2 { 
   text-align:center; 
@@ -30,7 +52,7 @@ input {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
-  width:300px;
+  width:300vw;
   border:none;
   border-bottom:1px solid #bf1922;
 }
@@ -129,4 +151,22 @@ input:focus ~ .highlight {
 }
 .sign-in-button:is(:hover, :focus){
 	outline-offset: 3px;
+}
+
+.button-login-google{
+  display: inline-block;
+  padding: 10px 20px;
+  border-color: #bf1922;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+	transition: outline-offset .25s;
+}
+
+img{
+  width: 3vw;
+}
+
+.footer{
+  align-content: center;
 }
