@@ -19,7 +19,11 @@ export default async () => {
     </header>
 
     <main>
-    palomita  
+    <div class="write-post-box">
+      <textarea id="post-input" placeholder="Escreva seu post"></textarea>
+      <button id="post-button"> 
+ <div id="post-feed"> </div>
+    </div>
     </main>
     `;
 
