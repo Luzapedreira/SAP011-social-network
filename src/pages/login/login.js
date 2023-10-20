@@ -11,7 +11,7 @@ export default () => {
      <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect<br> with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
     </section>
     <section class="page-login">
-      <h4 class='page-login'>Welcome to FitHub Woman. Please, connect:</h4>
+      <h4 class='page-login'>Welcome to FitHub Woman. Sign in to access:</h4>
     </section>
     <form class='input-group'>
       <div class='forms'>
@@ -32,11 +32,11 @@ export default () => {
     <br>
 
     <section id='loginGoogle'>
-      <button class = 'button-login-google' id='google' <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png' alt='google-icon'> Entre com Google <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png'></button>
+      <button class = 'button-login-google' id='google' <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png' alt='google-icon'> Continue with Google <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png'></button>
     </section>    
           
     <section id='register'><br>
-        <p>Ainda não tem uma conta?</p>
+        <p>Don´t have an account?</p>
         <br>
         <button class='sign-up-button' id='register'>Register</button>
       </section>

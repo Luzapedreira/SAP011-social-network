@@ -8,7 +8,7 @@ export default () => {
   container.innerHTML = `
   <article class='register-page'>
     <section class='about-register'>
-      <p id='about-regiser'> Cadastre-se, compartilhe a sua rotina e inspire-se com os hábitos saudáveis de outras pessoas. </p><br>
+      <p id='about-regiser'> Sign up, share your routine and be inspired by the healthy habits of other women. </p><br>
     </section>
     <section class='page-register'>
     </section>
@@ -40,7 +40,7 @@ export default () => {
       <button type='submit' id='sign-up-button' class='sign-up-button'>Sign Up</button>
     </form>
     <section class='login-input'>
-      <p>Já tem uma conta?</p><br>
+      <p>Already registered?</p><br>
       <button class='sign-in-button' id='login'>Login</button>
     </section>  
   </article>
