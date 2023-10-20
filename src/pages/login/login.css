@@ -130,3 +130,10 @@ input:focus ~ .highlight {
 .sign-in-button:is(:hover, :focus){
 	outline-offset: 3px;
 }
+
+#google-icon {
+  size: 10px;
+  /* background-image: url(../../img/google-icon.png);
+  background-repeat: no-repeat;
+  background-position: center; */
+}

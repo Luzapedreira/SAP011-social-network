@@ -31,7 +31,7 @@ export default () => {
     <button type='button' class='sign-in-button' id='sign-in'>Sign In</button>
     <section id='loginGoogle'>
       <button class = 'button-login-google' id='google'> Entre com Google</button>
-      <img id= 'google-icon' alt='google-icon'>
+      
     </section>          
     <section id='register'>
       <p>Ainda não tem uma conta?</p>

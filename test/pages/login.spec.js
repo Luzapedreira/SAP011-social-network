@@ -1,13 +1,13 @@
-// importamos la funcion que vamos a testear
-// import { myFunction } from '../src/lib/index';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { firebaseConfig } from '../../src/firebase/firebase-config.js';
+import { login } from '../../src/firebase/firebase-auth.js';
 
-// describe('myFunction', () => {
-//   it('debería ser una función', () => {
-//     expect(typeof myFunction).toBe('function');
-//   });
-// });
+describe('testando as funções do login', () => {
+    it('deve logar com sucesso quando usuário e senha estiverem corretos', () =>{
+        
+    })
+})
 
-// Teste Login de Usuário com Google
 import { googleLogin } from '../src/firebase/firebase-auth';
 
 describe('googleLogin', () => {
