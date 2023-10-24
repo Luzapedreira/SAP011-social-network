@@ -7,14 +7,41 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body{
+  background-color: #e2f0fd;
+}
+
+#figure {
+  width: 200px;
+  margin-top: 30px;
+  border-radius: 15%;
+
+}
+
 .page-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 50px 15px 50px;
+}
+
+/*.page-login {
   border-radius: 10px;
   border-color: #757575;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 5vw;
-}
+}*/
 
 h2 { 
   text-align:center; 
@@ -28,9 +55,8 @@ h2 {
 
 input {
   font-size:18px;
-  padding:10px 10px 10px 5px;
   display:block;
-  width:300px;
+  width:300vw;
   border:none;
   border-bottom:1px solid #bf1922;
 }
@@ -129,4 +155,67 @@ input:focus ~ .highlight {
 }
 .sign-in-button:is(:hover, :focus){
 	outline-offset: 3px;
+}
+
+.button-login-google{
+  display: inline-block;
+  padding: 10px 20px;
+  border-color: #bf1922;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+	transition: outline-offset .25s;
+  background-color: #ffff;
+}
+
+.button-login-google:hover{
+  color: #bf1922;
+  transition: outline-offset .25s
+}
+
+img{
+  width: 3vw;
+}
+
+.footer{
+  text-align: center;
+  text-decoration: #bf1922;
+}
+
+p{
+  font-size: 115%;
+  text-align: justify;
+  width: 27vw;
+  
+}
+
+h4{
+  text-align: center;
+  width: 80vw;
+}
+
+logo{
+  position: relative;
+
+}
+
+/*RESPONSIVIDADE*/
+
+@media screen and (max-width: 480px) {
+  
+  img{
+    width: 10vw;
+  }
+
+  p{
+    font-size: 115%;
+    text-align: justify;
+    width: 100%;
+    
+  }
+
+  input {
+    width: 100vw;
+  }
+
 }

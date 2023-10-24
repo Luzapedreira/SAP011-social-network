@@ -6,14 +6,13 @@ export default () => {
   const container = document.createElement('main');
   container.classList.add('main');
   container.innerHTML = `
-   <head>  <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
- </head>
-    <section class="about-login">
+  
+  <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
+  <section class="about-login">
      <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
     </section>
     <section class="page-login">
-      <h2>Sign in</h2>
-      <p class='page-login'>Connect and be inspired by others like you.</p>
+      <h4 class='page-login'>Welcome to FitHub Woman.<br> Sign in to access:</h4>
     </section>
     <form class='input-group'>
       <div class='forms'>
@@ -31,13 +30,15 @@ export default () => {
       </div>
     </form>
     <button type='button' class='sign-in-button' id='sign-in'>Sign In</button>
+    <br>
+
     <section id='loginGoogle'>
-      <button class = 'button-login-google' id='google'> Entre com Google</button>
-      
-      <img id= 'google-icon' alt='google-icon'>
-    </section>          
-    <section id='register'>
-        <p>Ainda não tem uma conta?</p>
+      <button class = 'button-login-google' id='google' <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png' alt='google-icon'> Continue with Google <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png'></button>
+    </section>    
+          
+    <section id='register'><br>
+        <h4>Don´t have an account?</h4>
+        <br>
         <button class='sign-up-button' id='register'>Register</button>
       </section>
       `;
