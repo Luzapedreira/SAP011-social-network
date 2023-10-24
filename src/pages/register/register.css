@@ -23,6 +23,8 @@ main{
 .input-register { 
   position:relative; 
   margin-bottom:30px;
+  align-items: center;
+  display: inline-block;
 }
 
 .sign-up-button {
