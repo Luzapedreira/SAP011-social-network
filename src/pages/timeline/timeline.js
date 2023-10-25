@@ -16,6 +16,7 @@ export default async () => {
 
   container.innerHTML = `
     <header>
+   <button onclik= "Sair" class=logout </button> 
     </header>
 
     <main>
@@ -25,7 +26,12 @@ export default async () => {
       <button id="post-button"> 
  <div id="post-feed"> </div>
     </div>
+    
+    <main 
+    <button onclik= "Postar" id=publish-icon </button> 
+   <div id="post-feed"></div>
     </main>
+
     `;
 
   const auth = getAuth();
@@ -59,7 +65,7 @@ export default async () => {
       <div class="button-modal">
        <button id="cancel-modal">Cancel</button>
         <button id="delete-modal">Delete</button>
-      <button id="newpost">New</button>
+       
       </div>
     </div>  
   `;
@@ -86,8 +92,6 @@ export default async () => {
   };
 
   function renderPost(post) {
-    console.log(post.timestamp);
-
     const timelinePost = container.querySelector('#post-feed');
     const postContainer = document.createElement('div');
     postContainer.className = 'post';
@@ -114,7 +118,7 @@ export default async () => {
     let deleteButton = '';
     if (post.idUser === auth.currentUser.uid) {
       deleteButton = document.createElement('button');
-      deleteButton.innerHTML = '<i class=\'material-symbols-outlined\'>delete</i>';
+      deleteButton.innerHTML = '<i class=Excluir \'material-symbols-outlined\'>delete</i>';
       deleteButton.className = 'delete-button';
     }
 
@@ -122,7 +126,7 @@ export default async () => {
 
     if (post.idUser === auth.currentUser.uid) {
       editButton = document.createElement('button');
-      editButton.innerHTML = '<i class=\'fa-regular fa-pen-to-square\'></i>';
+      editButton.innerHTML = '<i class=editarTexto\'fa-regular fa-pen-to-square\'></i>';
       editButton.className = 'edit-button';
     }
     const userActions = document.createElement('div');
@@ -132,7 +136,7 @@ export default async () => {
     likeAction.className = 'like-actions like-actions-right';
 
     const starButton = document.createElement('button');
-    starButton.innerHTML = '<i class= ></i>';
+    starButton.innerHTML = '<i class=like ></i>';
     starButton.className = 'star-button';
 
     const starCount = document.createElement('span');
@@ -287,9 +291,10 @@ export default async () => {
 
   function renderPostsIfAuthenticated(userName, idUser) {
     const timelinePost = container.querySelector('#post-feed');
-    const newPostContainerLocation = container.querySelector('#new-post-container');
+    // const newPostContainerLocation = container.querySelector('#new-post-container');
+    const isNewPostContainerCreated = container.querySelector('div')
 
-    if (!isNewPostContainerCreated) {
+    if (isNewPostContainerCreated) {
       const newPostContainer = document.createElement('div');
       newPostContainer.className = 'new-post-container';
 
@@ -316,7 +321,7 @@ export default async () => {
       newPostContainer.appendChild(postContentDiv);
 
       const publishButton = document.createElement('button');
-      publishButton.innerHTML = `<img src=''>`;
+
       publishButton.id = 'publish-icon';
 
       const contentBox = document.createElement('div');
@@ -360,7 +365,7 @@ export default async () => {
         }
       });
 
-      newPostContainerLocation.appendChild(newPostContainer);
+      isNewPostContainerCreated.appendChild(newPostContainer);
     }
   }
 
@@ -396,18 +401,14 @@ export default async () => {
         alert('Erro ao fazer logout. Tente novamente mais tarde');
       });
   }
+  const logoutButtonDesktop = container.querySelector('.btn-logout-desktop');
+  logoutButtonDesktop.addEventListener('click', logout);
 
-  // const logoutButton = container.querySelector('.btn-logout');
-  // logoutButton.addEventListener('click', logout);
-
-  // const logoutButtonDesktop = container.querySelector('.btn-logout-desktop');
-  // logoutButtonDesktop.addEventListener('click', logout);
-
-  // const newPostButton = container.querySelector('#newpost');
-  // newPostButton.addEventListener('click', () => {
-  //   createNewPost(username, userId);
-  //   modalContainer.remove();
-  // });
+  //const newPostButton = container.querySelector('#newpost');
+  //newPostButton.addEventListener('click', () => {
+    createNewPost(username, userId);
+    modalContainer.remove();
+   });
 
   return container;
-} 
+}
