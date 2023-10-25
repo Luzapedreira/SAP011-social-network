@@ -408,7 +408,6 @@ export default async () => {
   //newPostButton.addEventListener('click', () => {
     createNewPost(username, userId);
     modalContainer.remove();
-   });
+   };
 
   return container;
-}
