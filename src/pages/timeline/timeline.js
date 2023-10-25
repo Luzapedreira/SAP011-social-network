@@ -18,6 +18,14 @@ export default async () => {
     <header>
     <button onclik="logout()" class="logout"> sair  </button>
     </header>
+
+    <main>
+    <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
+    <div class="write-post-box">
+      <textarea id="post-input" placeholder="Escreva seu post aqui..."></textarea>
+      <button id="post-button"> 
+ <div id="post-feed"> </div>
+    </div>
     
     <main 
    
