@@ -1,5 +1,7 @@
-import { newUser } from '../../firebase/firebase-auth.js';
-import { users } from '../../firebase/firebase-store.js';
+ import { register } from 'module';
+import { newRegister } from '../../firebase/firebaseAuth.js';
+// import { newUser } from '../../firebase/firebase-auth.js';
+// import { users } from '../../firebase/firebase-store.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -47,42 +49,23 @@ export default () => {
   </article>
   `;
 
-  const register = container.querySelector('#sign-up-button');
-  register.addEventListener('click', () => {
-    const name = container.querySelector('.full-name').value;
-    const nickname = container.querySelector('.nickname').value;
-    const email = container.querySelector('#email').value;
-    const password = container.querySelector('.password').value;
-
-    if (name.value === '' || nickname.value === '' || email.value === '' || password.value === '') {
-      // eslint-disable-next-line no-alert
-      alert('Please fill in all fields');
-    } else {
-      newUser(email, password, name, nickname)
-        .then(() => users(name, nickname, email))
-        .then(() => {
-          window.location.hash = '#timeline';
-        })
-        .catch((error) => {
-          console.error(error.message);
-          if (error.message === 'Firebase: Error (auth/invalid-email).') {
-            // eslint-disable-next-line no-alert
-            alert('Invalid email!');
-          } else if (error.message === ' Firebase: Error (auth/internal-error).') {
-            // eslint-disable-next-line no-alert
-            alert('Invalid password');
-          }
-          // eslint-disable-next-line no-alert
-          alert('Error when registering, checking fields');
-        });
-    }
-
-    window.location.hash = '#login';
-  });
-
   const returnLogin = container.querySelector('#login');
   returnLogin.addEventListener('click', () => {
     window.location.hash = '#login';
   });
+
+  const userRegister = container.querySelector('#sign-up-button');
+  userRegister.addEventListener('click', () => {
+    const email = container.querySelector('#email').value;
+    const senha = container.querySelector('#password').value;
+
+    newRegister(email, senha)
+      .then(() => {
+      })
+      .catch(() => {
+        alert('Erro ao cadastrar usuário!');
+      });
+  });
+
   return container;
 };

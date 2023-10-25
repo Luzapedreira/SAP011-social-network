@@ -4,4 +4,4 @@
 //   console.log('Hola mundo!');
 // };
 
-import main from './main.js';
+import main from '../main.js';
