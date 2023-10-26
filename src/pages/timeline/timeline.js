@@ -8,7 +8,7 @@ import {
   noAwesome,
   deletePost,
 } from '../../firebase/firebase-store.js';
-import { db, firebaseConfig } from '../../firebase/firebase-config.js';
+import { db } from '../../firebase/firebase-config.js';
 
 export default async () => {
   const container = document.createElement('div');
@@ -16,22 +16,11 @@ export default async () => {
 
   container.innerHTML = `
     <header>
-    <button onclik="logout()" class="logout"> sair  </button>
+    <button class="logout"> sair </button>
     </header>
-
-    <main>
-    <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
-    <div class="write-post-box">
-      <textarea id="post-input" placeholder="Escreva seu post aqui..."></textarea>
-      <button id="post-button"> 
- <div id="post-feed"> </div>
-    </div>
     
     <main 
-   
-    <div class="post">
-   
-</div>
+
    <div id="post-feed"></div>
     </main>
 
@@ -62,12 +51,12 @@ export default async () => {
 
   const modalDelete = () => {
     const templateDelete = `
-    <div id="fade" class="hide"></div>
+     <div id="fade" class="hide"></div>
      <div id="modal" class="hide">
       <p class="message-delete">Are you sure?</p> 
-     <div class="button-modal">
-       <button id="cancel-modal">Cancel</button>
-       <button id="delete-modal">Delete</button>
+    <div class="button-modal">
+    <button id="cancel-modal">Cancel</button>
+   <button id="delete-modal">Delete</button>
        
       </div>
     </div>  
@@ -320,7 +309,7 @@ export default async () => {
       newPostContainer.appendChild(postContentDiv);
 
       const publishButton = document.createElement('button');
-
+      publishButton.textContent = 'Publish';
       publishButton.id = 'publish-icon';
 
       const contentBox = document.createElement('div');
@@ -394,27 +383,25 @@ export default async () => {
 
     signOut(auth)
       .then(() => {
-        window.location.href = "";
+        window.location.hash = '#login';
       })
       .catch((error) => {
         console.error('Erro ao fazer logout', error);
         alert('Erro ao fazer logout. Tente novamente mais tarde');
       });
   }
-
+  const logoutButtonDesktop = container.querySelector('.logout');
+  if (logoutButtonDesktop) {
+    logoutButtonDesktop.addEventListener('click', logout);
+  }
+  console.log(logoutButtonDesktop);
   document.addEventListener('DOMContentLoaded', () => {
     const logoutButton = document.querySelector('#logout');
-    const logoutButtonDesktop = document.querySelector('.logout');
 
     // Adicione event listeners para fazer logout
     if (logoutButton) {
       logoutButton.addEventListener('click', logout);
     }
-
-    if (logoutButtonDesktop) {
-      logoutButtonDesktop.addEventListener('click', logout);
-    }
   });
-
   return container;
-};
+}
