@@ -50,7 +50,8 @@ export default () => {
   function loginGoogle() {
     const provider = new GoogleAuthProvider(firebaseConfig);
     const auth = getAuth();
-    signInWithPopup(auth, provider)
+
+    return signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
         console.log('Usuário logado com o Google:', user);
@@ -62,8 +63,10 @@ export default () => {
 
   const googleButton = container.querySelector('#google');
   googleButton.addEventListener('click', () => {
-    loginGoogle();
-    window.location.hash = '#timeline';
+    loginGoogle().then(()=>{
+      window.location.hash = '#timeline';
+    });
+   // window.location.hash = '#timeline';
   });
 
   const enterLogin = container.querySelector('#sign-in'); // Seleciona o botão de login.
