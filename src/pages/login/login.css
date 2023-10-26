@@ -199,6 +199,10 @@ logo{
 
 }
 
+footer{
+  position: sticky;
+}
+
 /*RESPONSIVIDADE*/
 
 @media screen and (max-width: 480px) {
@@ -217,5 +221,10 @@ logo{
   input {
     width: 100vw;
   }
+
+  /*.input-group{
+    width: 20vw;
+    font-size: 80%;
+  }*/
 
 }
