@@ -20,7 +20,7 @@ export default async () => {
     <button class="logout"> 🠆］ </button>
     </header>
     
-    <main 
+    <main> 
 
    <div id="post-feed"></div>
     </main>
@@ -276,7 +276,7 @@ export default async () => {
     });
   }
 
-  existingPosts.forEach((item) => renderPost(item));
+  // existingPosts.forEach((item) => renderPost(item));
 
   function renderPostsIfAuthenticated(userName, idUser) {
     const timelinePost = container.querySelector('#post-feed');
@@ -368,8 +368,9 @@ export default async () => {
       const userId = user.uid;
       renderPostsIfAuthenticated(username, userId);
       try {
-        const posts = await postViewer();
-        renderPost(posts);
+        existingPosts.forEach((item) => renderPost(item));
+        // const posts = await postViewer();
+       // renderPost(posts);
       } catch (error) {
         console.error('Erro ao buscar posts', error);
       }

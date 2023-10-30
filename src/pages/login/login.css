@@ -34,16 +34,6 @@ body{
   padding: 10px 50px 15px 50px;
 }
 
-
-/*.page-login {
-  border-radius: 10px;
-  border-color: #757575;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 5vw;
-}*/
-
 h2 { 
   text-align:center; 
   margin-bottom:50px;
@@ -228,10 +218,5 @@ footer{
   input {
     width: 100vw;
   }
-
-  /*.input-group{
-    width: 20vw;
-    font-size: 80%;
-  }*/
 
 }

@@ -22,7 +22,6 @@ main{
 
 .input-register { 
   position:relative; 
-  margin-bottom:30px;
   align-items: center;
   display: inline-block;
   text-align: justify;
@@ -37,6 +36,7 @@ main{
   border-radius: 4px;
   outline: 2px solid #bf1922;
   cursor: pointer;
+  align-items: center;
   transition: outline-offset .25s;
 }
 
@@ -139,4 +139,23 @@ h4{
 
 footer{
   position: sticky;
+}
+
+logo{
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.figure{
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+
+.imput-register{
+  width: 100%;
+}
+
 }
