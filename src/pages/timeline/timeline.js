@@ -16,11 +16,10 @@ export default async () => {
 
   container.innerHTML = `
     <header>
-    <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
-    <button class="logout"> 🠆］ </button>
+    <button class="logout"> sair </button>
     </header>
     
-    <main> 
+    <main 
 
    <div id="post-feed"></div>
     </main>
@@ -119,7 +118,7 @@ export default async () => {
 
     if (post.idUser === auth.currentUser.uid) {
       editButton = document.createElement('button');
-      editButton.innerHTML = '<i class=editarTexto\'fa-regular fa-pen-to-square\'>edit</editar >';
+      editButton.innerHTML = '<i class=editarTexto\'fa-regular fa-pen-to-square\'>To edit</editar >';
       editButton.className = 'edit-button';
     }
     const userActions = document.createElement('div');
@@ -129,7 +128,7 @@ export default async () => {
     likeAction.className = 'like-actions like-actions-right';
 
     const starButton = document.createElement('button');
-    starButton.innerHTML = '<i class=like >★</i>';
+    starButton.innerHTML = '<i class=like >incredible</i>';
     starButton.className = 'star-button';
 
     const starCount = document.createElement('span');
@@ -197,12 +196,12 @@ export default async () => {
         editForm.appendChild(editTextArea);
 
         const cancelButton = document.createElement('button');
-        cancelButton.innerHTML = '<class="cancelar">cancel</i>';
+        cancelButton.innerHTML = '<class="cancelar">Cancel</i>';
         cancelButton.className = 'cancel-button';
         editForm.appendChild(cancelButton);
 
         const saveButton = document.createElement('button');
-        saveButton.innerHTML = '<i class="Salvar">save</i>';
+        saveButton.innerHTML = '<i class="Salvar">To save</i>';
         saveButton.className = 'save-button';
         editForm.appendChild(saveButton);
 
@@ -276,7 +275,7 @@ export default async () => {
     });
   }
 
-  // existingPosts.forEach((item) => renderPost(item));
+  existingPosts.forEach((item) => renderPost(item));
 
   function renderPostsIfAuthenticated(userName, idUser) {
     const timelinePost = container.querySelector('#post-feed');
@@ -298,7 +297,7 @@ export default async () => {
       postContentDiv.className = 'post-content-div';
 
       const postContentTextarea = document.createElement('textarea');
-      postContentTextarea.placeholder = 'Compartilhe a sua rotina aqui...';
+      postContentTextarea.placeholder = 'Compartilhe aqui a sua rotina.';
       postContentTextarea.id = 'post-content';
 
       // Adiciona o ícone e a <textarea> como filhos do div de conteúdo
@@ -366,15 +365,14 @@ export default async () => {
     if (user) {
       const username = user.displayName;
       const userId = user.uid;
-      renderPostsIfAuthenticated(username, userId);
+
       try {
-        existingPosts.forEach((item) => renderPost(item));
-        // const posts = await postViewer();
-       // renderPost(posts);
+        const posts = await postViewer();
+        renderPost(posts);
       } catch (error) {
         console.error('Erro ao buscar posts', error);
       }
-
+      renderPostsIfAuthenticated(username, userId);
     }
   });
 
