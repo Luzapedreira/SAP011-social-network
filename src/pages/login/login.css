@@ -34,6 +34,7 @@ body{
   padding: 10px 50px 15px 50px;
 }
 
+
 /*.page-login {
   border-radius: 10px;
   border-color: #757575;
@@ -138,6 +139,11 @@ input:focus ~ .highlight {
   to  { width:0; background:transparent; }
 }
 
+.input-group__label{
+  width: 100%;
+  text-align: justify;
+}
+
 .sign-in-button {
 	display: inline-block;
 	padding: 10px 20px;
@@ -149,6 +155,7 @@ input:focus ~ .highlight {
 	cursor: pointer;
 	transition: outline-offset .25s;
 }
+
 .sign-in-button:hover,
 .sign-in-button:focus{
 	outline-offset: 3px;
