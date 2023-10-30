@@ -2,8 +2,6 @@ import register from './pages/register/register.js';
 import login from './pages/login/login.js';
 import timeline from './pages/timeline/timeline.js';
 
-let logged = false;
-
 const main = document.querySelector('#teste');
 export function registerPage() {
   const content = document.createElement('div');
@@ -27,26 +25,21 @@ const init = async () => {
 
   switch (pages) {
     case '#login':
-      if (!logged) {
-        main.appendChild(login());
-      } else {
-        window.location.hash = '#timeline';
-      }
+
+      main.appendChild(login());
       break;
     case '#register':
       main.appendChild(register());
       break;
     case '#timeline':
-      if (logged) {
-        main.appendChild(timeline());
-      } else {
-        window.location.hash = '#login';
-      }
+
+      main.appendChild(await timeline());
+
       break;
     default:
       window.location.hash = '#login';
       break;
-  };
+  }
 };
 
 window.addEventListener('hashchange', init);

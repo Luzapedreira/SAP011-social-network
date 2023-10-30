@@ -57,7 +57,8 @@ export default () => {
       // eslint-disable-next-line no-alert
       alert('Please fill in all fields');
     } else {
-      newUser(email, password, name, nickname)
+      console.log(password);
+      newUser(email, nickname, password)
         .then(() => users(name, nickname, email))
         .then(() => {
           window.location.hash = '#timeline';

@@ -16,15 +16,15 @@ export default async () => {
 
   container.innerHTML = `
     <header>
+    <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
+    <button class="logout"> 🠆］ </button>
     </header>
+    
+    <main> 
 
-    <main>
-    <div class="write-post-box">
-      <textarea id="post-input" placeholder="Escreva seu post"></textarea>
-      <button id="post-button"> 
- <div id="post-feed"> </div>
-    </div>
+   <div id="post-feed"></div>
     </main>
+
     `;
 
   const auth = getAuth();
@@ -52,13 +52,13 @@ export default async () => {
 
   const modalDelete = () => {
     const templateDelete = `
-    <div id="fade" class="hide"></div>
-    <div id="modal" class="hide">
+     <div id="fade" class="hide"></div>
+     <div id="modal" class="hide">
       <p class="message-delete">Are you sure?</p> 
-      <div class="button-modal">
-       <button id="cancel-modal">Cancel</button>
-        <button id="delete-modal">Delete</button>
-      <button id="newpost">New</button>
+    <div class="button-modal">
+    <button id="cancel-modal">Cancel</button>
+   <button id="delete-modal">Delete</button>
+       
       </div>
     </div>  
   `;
@@ -85,8 +85,6 @@ export default async () => {
   };
 
   function renderPost(post) {
-    console.log(post.timestamp);
-
     const timelinePost = container.querySelector('#post-feed');
     const postContainer = document.createElement('div');
     postContainer.className = 'post';
@@ -113,7 +111,7 @@ export default async () => {
     let deleteButton = '';
     if (post.idUser === auth.currentUser.uid) {
       deleteButton = document.createElement('button');
-      deleteButton.innerHTML = '<i class=\'material-symbols-outlined\'>delete</i>';
+      deleteButton.innerHTML = '<i class=Excluir \'material-symbols-outlined\'>delete</i>';
       deleteButton.className = 'delete-button';
     }
 
@@ -121,7 +119,7 @@ export default async () => {
 
     if (post.idUser === auth.currentUser.uid) {
       editButton = document.createElement('button');
-      editButton.innerHTML = '<i class=\'fa-regular fa-pen-to-square\'></i>';
+      editButton.innerHTML = '<i class=editarTexto\'fa-regular fa-pen-to-square\'>edit</editar >';
       editButton.className = 'edit-button';
     }
     const userActions = document.createElement('div');
@@ -131,7 +129,7 @@ export default async () => {
     likeAction.className = 'like-actions like-actions-right';
 
     const starButton = document.createElement('button');
-    starButton.innerHTML = '<i class= ></i>';
+    starButton.innerHTML = '<i class=like >★</i>';
     starButton.className = 'star-button';
 
     const starCount = document.createElement('span');
@@ -199,12 +197,12 @@ export default async () => {
         editForm.appendChild(editTextArea);
 
         const cancelButton = document.createElement('button');
-        cancelButton.innerHTML = '<i class= ></i>';
+        cancelButton.innerHTML = '<class="cancelar">cancel</i>';
         cancelButton.className = 'cancel-button';
         editForm.appendChild(cancelButton);
 
         const saveButton = document.createElement('button');
-        saveButton.innerHTML = '<i class= ></i>';
+        saveButton.innerHTML = '<i class="Salvar">save</i>';
         saveButton.className = 'save-button';
         editForm.appendChild(saveButton);
 
@@ -245,12 +243,12 @@ export default async () => {
       });
     }
 
+    // Defina o atributo data-post-id no botão de curtir
+    starButton.setAttribute('data-post-id', post.id);
     starButton.addEventListener('click', async () => {
-      window.location.reload(); // temporário reload de page
-      const postId = starButton.closest('.post').getAttribute('data-post-id');
+      const postId = starCount.closest('.post').getAttribute('data-post-id');
       const user = auth.currentUser;
       const idUserAtual = user ? user.uid : null;
-
       try {
         const hasLiked = await checkIfUserLiked(postId, idUserAtual);
 
@@ -260,11 +258,7 @@ export default async () => {
           await noAwesome(postId, idUserAtual);
         }
 
-        // Procura o elemento .like-count no contêiner do post atual
-        const postContainer = starButton.closest('.post');
-        const starCount = postContainer.querySelector('.like-count');
-
-        if (starCount) {
+        if (starButton) {
           const currentCount = parseInt(starCount.textContent, 10);
           if (!Number.isNaN(currentCount)) {
             const newCount = hasLiked ? currentCount - 1 : currentCount + 1;
@@ -282,13 +276,14 @@ export default async () => {
     });
   }
 
-  existingPosts.forEach((item) => renderPost(item));
+  // existingPosts.forEach((item) => renderPost(item));
 
   function renderPostsIfAuthenticated(userName, idUser) {
     const timelinePost = container.querySelector('#post-feed');
-    const newPostContainerLocation = container.querySelector('#new-post-container');
+    // const newPostContainerLocation = container.querySelector('#new-post-container');
+    const isNewPostContainerCreated = container.querySelector('div');
 
-    if (!isNewPostContainerCreated) {
+    if (isNewPostContainerCreated) {
       const newPostContainer = document.createElement('div');
       newPostContainer.className = 'new-post-container';
 
@@ -303,7 +298,7 @@ export default async () => {
       postContentDiv.className = 'post-content-div';
 
       const postContentTextarea = document.createElement('textarea');
-      postContentTextarea.placeholder = 'Compartilhe aqui a sua rotina.';
+      postContentTextarea.placeholder = 'Compartilhe a sua rotina aqui...';
       postContentTextarea.id = 'post-content';
 
       // Adiciona o ícone e a <textarea> como filhos do div de conteúdo
@@ -315,7 +310,7 @@ export default async () => {
       newPostContainer.appendChild(postContentDiv);
 
       const publishButton = document.createElement('button');
-      publishButton.innerHTML = `<img src=''>`;
+      publishButton.textContent = 'Publish';
       publishButton.id = 'publish-icon';
 
       const contentBox = document.createElement('div');
@@ -359,7 +354,7 @@ export default async () => {
         }
       });
 
-      newPostContainerLocation.appendChild(newPostContainer);
+      isNewPostContainerCreated.appendChild(newPostContainer);
     }
   }
 
@@ -371,42 +366,44 @@ export default async () => {
     if (user) {
       const username = user.displayName;
       const userId = user.uid;
-
+      renderPostsIfAuthenticated(username, userId);
       try {
-        const posts = await postViewer();
-        renderPost(posts);
+        existingPosts.forEach((item) => renderPost(item));
+        // const posts = await postViewer();
+       // renderPost(posts);
       } catch (error) {
         console.error('Erro ao buscar posts', error);
       }
-      renderPostsIfAuthenticated(username, userId);
+
     }
   });
 
   // Função para fazer logout
+
   function logout() {
     console.log('Botão de sair clicado no menu desktop');
 
     signOut(auth)
       .then(() => {
-        window.location = '/';
+        window.location.hash = '#login';
       })
       .catch((error) => {
         console.error('Erro ao fazer logout', error);
         alert('Erro ao fazer logout. Tente novamente mais tarde');
       });
   }
+  const logoutButtonDesktop = container.querySelector('.logout');
+  if (logoutButtonDesktop) {
+    logoutButtonDesktop.addEventListener('click', logout);
+  }
+  console.log(logoutButtonDesktop);
+  document.addEventListener('DOMContentLoaded', () => {
+    const logoutButton = document.querySelector('#logout');
 
-  // const logoutButton = container.querySelector('.btn-logout');
-  // logoutButton.addEventListener('click', logout);
-
-  // const logoutButtonDesktop = container.querySelector('.btn-logout-desktop');
-  // logoutButtonDesktop.addEventListener('click', logout);
-
-  // const newPostButton = container.querySelector('#newpost');
-  // newPostButton.addEventListener('click', () => {
-  //   createNewPost(username, userId);
-  //   modalContainer.remove();
-  // });
-
+    // Adicione event listeners para fazer logout
+    if (logoutButton) {
+      logoutButton.addEventListener('click', logout);
+    }
+  });
   return container;
 }

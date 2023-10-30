@@ -31,17 +31,8 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 50px 50px 50px;
+  padding: 10px 50px 15px 50px;
 }
-
-/*.page-login {
-  border-radius: 10px;
-  border-color: #757575;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 5vw;
-}*/
 
 h2 { 
   text-align:center; 
@@ -55,7 +46,6 @@ h2 {
 
 input {
   font-size:18px;
-  padding:10px 10px 10px 5px;
   display:block;
   width:300vw;
   border:none;
@@ -139,6 +129,11 @@ input:focus ~ .highlight {
   to  { width:0; background:transparent; }
 }
 
+.input-group__label{
+  width: 100%;
+  text-align: justify;
+}
+
 .sign-in-button {
 	display: inline-block;
 	padding: 10px 20px;
@@ -150,6 +145,7 @@ input:focus ~ .highlight {
 	cursor: pointer;
 	transition: outline-offset .25s;
 }
+
 .sign-in-button:hover,
 .sign-in-button:focus{
 	outline-offset: 3px;
@@ -179,5 +175,48 @@ img{
 }
 
 .footer{
-  align-content: center;
+  text-align: center;
+  text-decoration: #bf1922;
+}
+
+p{
+  font-size: 115%;
+  text-align: justify;
+  width: 27vw;
+  
+}
+
+h4{
+  text-align: center;
+  width: 80vw;
+}
+
+logo{
+  position: relative;
+
+}
+
+footer{
+  position: sticky;
+}
+
+/*RESPONSIVIDADE*/
+
+@media screen and (max-width: 480px) {
+  
+  img{
+    width: 10vw;
+  }
+
+  p{
+    font-size: 115%;
+    text-align: justify;
+    width: 100%;
+    
+  }
+
+  input {
+    width: 100vw;
+  }
+
 }

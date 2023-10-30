@@ -7,11 +7,12 @@ export default () => {
   container.classList.add('main');
   container.innerHTML = `
   
-    <section class="about-login">
-     <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect<br> with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
+  <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
+  <section class="about-login">
+     <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
     </section>
     <section class="page-login">
-      <h4 class='page-login'>Welcome to FitHub Woman. Sign in to access:</h4>
+      <h4 class='page-login'>Welcome to FitHub Woman.<br> Sign in to access:</h4>
     </section>
     <form class='input-group'>
       <div class='forms'>
@@ -36,7 +37,7 @@ export default () => {
     </section>    
           
     <section id='register'><br>
-        <p>Do you not have an account?</p>
+        <h4>Don´t have an account?</h4>
         <br>
         <button class='sign-up-button' id='register'>Register</button>
       </section>
@@ -49,7 +50,8 @@ export default () => {
   function loginGoogle() {
     const provider = new GoogleAuthProvider(firebaseConfig);
     const auth = getAuth();
-    signInWithPopup(auth, provider)
+
+    return signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
         console.log('Usuário logado com o Google:', user);
@@ -61,8 +63,10 @@ export default () => {
 
   const googleButton = container.querySelector('#google');
   googleButton.addEventListener('click', () => {
-    loginGoogle();
-    window.location.hash = '#timeline';
+    loginGoogle().then(()=>{
+      window.location.hash = '#timeline';
+    });
+   // window.location.hash = '#timeline';
   });
 
   const enterLogin = container.querySelector('#sign-in'); // Seleciona o botão de login.
@@ -88,3 +92,4 @@ export default () => {
 
   return container;
 };
+
