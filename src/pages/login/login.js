@@ -26,7 +26,7 @@ export default () => {
         <span class="highlight"></span>
         <span class="bar"></span>
         <label for='password' class='input-group__label'>Password</label>
-       <a href='#forgot' id='btn-recover-password'>Forgot your password?</a>
+        <!-- <a href='#forgot' id='btn-recover-password'>Forgot your password?</a> -->
       </div>
     </form>
     <button type='button' class='sign-in-button' id='sign-in'>Sign In</button>
@@ -63,10 +63,10 @@ export default () => {
 
   const googleButton = container.querySelector('#google');
   googleButton.addEventListener('click', () => {
-    loginGoogle().then(()=>{
+    loginGoogle().then(() => {
       window.location.hash = '#timeline';
     });
-   // window.location.hash = '#timeline';
+    // window.location.hash = '#timeline';
   });
 
   const enterLogin = container.querySelector('#sign-in'); // Seleciona o botão de login.
