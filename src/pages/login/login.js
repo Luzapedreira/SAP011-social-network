@@ -62,18 +62,18 @@ export default () => {
 
   const googleButton = container.querySelector('#google');
   googleButton.addEventListener('click', () => {
-    loginGoogle().then(()=>{
+    loginGoogle().then(() => {
       window.location.hash = '#timeline';
     });
-   // window.location.hash = '#timeline';
+    // window.location.hash = '#timeline';
   });
 
   const enterLogin = container.querySelector('#sign-in'); // Seleciona o botão de login.
   enterLogin.addEventListener('click', () => {
     const email = container.querySelector('#email'); // Captura o campo de e-mail.
     const password = container.querySelector('#password');
-    window.location.hash = '#timeline';
-    // window.location.hash = "#timeline"; // Vai para a âncora "#timeline" em caso de sucesso.
+console.log (password.value);
+console.log (email.value);
 
     login(email.value, password.value)
       .then(() => {
