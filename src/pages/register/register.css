@@ -7,9 +7,24 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.register-page{
+  border-radius: 10px;
+  border-color: #757575;
+}
+
 .input-register { 
   position:relative; 
-  margin-bottom:30px;
+  align-items: center;
+  display: inline-block;
+  text-align: justify;
 }
 
 .sign-up-button {
@@ -21,6 +36,7 @@
   border-radius: 4px;
   outline: 2px solid #bf1922;
   cursor: pointer;
+  align-items: center;
   transition: outline-offset .25s;
 }
 
@@ -44,13 +60,14 @@ label {
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
+  border-color: #bf1922;
 }
 
 input {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
-  width:300px;
+  width:20vw;
   border:none;
   border-bottom:1px solid #757575;
 }
@@ -63,7 +80,7 @@ input:focus {
 .bar:before, .bar:after {
   content:'';
   height:2px; 
-  width:0;
+  width:0vw;
   bottom:1px; 
   position:absolute;
   background:#bf1922; 
@@ -86,12 +103,12 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 .highlight {
   position:absolute;
-  height:60%; 
-  width:100px; 
+  height:60vh; 
+  width:100vw; 
   top:25%; 
-  left:0;
+  left:0%;
   pointer-events:none;
-  opacity:0.5;
+  opacity:0.5px;
 }
 
 input:focus ~ .highlight {
@@ -113,4 +130,32 @@ input:focus ~ .highlight {
 @keyframes inputHighlighter {
   from { background:#bf1922; }
   to  { width:0; background:transparent; }
+}
+
+h4{
+  text-align: center;
+  width: 80vw;
+}
+
+footer{
+  position: sticky;
+}
+
+logo{
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.figure{
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+
+.imput-register{
+  width: 100%;
+}
+
 }
