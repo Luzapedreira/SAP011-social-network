@@ -6,12 +6,12 @@ export default () => {
   const container = document.createElement('main');
   container.classList.add('main');
   container.innerHTML = `
-    <section" class="about-login">
-     <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
+  
+    <section class="about-login">
+     <p id='about-login'>Enter the world of health and well-being! Share your workout routines, healthy recipes and connect<br> with enthusiasts like you. Together, we inspire and motivate each other to achieve our goals.</p>
     </section>
     <section class="page-login">
-      <h2>Sign in</h2>
-      <p class='page-login'>Connect and be inspired by others like you.</p>
+      <h4 class='page-login'>Welcome to FitHub Woman. Sign in to access:</h4>
     </section>
     <form class='input-group'>
       <div class='forms'>
@@ -29,15 +29,18 @@ export default () => {
       </div>
     </form>
     <button type='button' class='sign-in-button' id='sign-in'>Sign In</button>
+    <br>
+
     <section id='loginGoogle'>
-      <button class = 'button-login-google' id='google'> Entre com Google</button>
-      
-    </section>          
-    <section id='register'>
-      <p>Ainda não tem uma conta?</p>
-      <button class='sign-up-button' id='register'>Register</button>
-    </section>
-    `;
+      <button class = 'button-login-google' id='google' <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png' alt='google-icon'> Continue with Google <img src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png'></button>
+    </section>    
+          
+    <section id='register'><br>
+        <p>Do not have an account?</p>
+        <br>
+        <button class='sign-up-button' id='register'>Register</button>
+      </section>
+      `;
   const goRegister = container.querySelector('#register');
   goRegister.addEventListener('click', () => {
     window.location.hash = '#register';
@@ -46,7 +49,8 @@ export default () => {
   function loginGoogle() {
     const provider = new GoogleAuthProvider(firebaseConfig);
     const auth = getAuth();
-    signInWithPopup(auth, provider)
+
+    return signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
         console.log('Usuário logado com o Google:', user);
@@ -58,13 +62,17 @@ export default () => {
 
   const googleButton = container.querySelector('#google');
   googleButton.addEventListener('click', () => {
-    loginGoogle();
+    loginGoogle().then(()=>{
+      window.location.hash = '#timeline';
+    });
+   // window.location.hash = '#timeline';
   });
 
   const enterLogin = container.querySelector('#sign-in'); // Seleciona o botão de login.
   enterLogin.addEventListener('click', () => {
     const email = container.querySelector('#email'); // Captura o campo de e-mail.
     const password = container.querySelector('#password');
+    window.location.hash = '#timeline';
     // window.location.hash = "#timeline"; // Vai para a âncora "#timeline" em caso de sucesso.
 
     login(email.value, password.value)
