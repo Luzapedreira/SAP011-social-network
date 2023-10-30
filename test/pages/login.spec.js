@@ -3,9 +3,9 @@ import { firebaseConfig } from '../../src/firebase/firebase-config.js';
 import { login } from '../../src/firebase/firebase-auth.js';
 
 describe('testando as funções do login', () => {
-    it('deve logar com sucesso quando usuário e senha estiverem corretos', () =>{
-        
-    })
+  it('deve logar com sucesso quando usuário e senha estiverem corretos', () => {
+
+  })
 })
 
 import { googleLogin } from '../src/firebase/firebase-auth';
