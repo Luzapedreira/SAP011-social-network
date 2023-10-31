@@ -1,6 +1,6 @@
 # Social Network: FitHub Woman
 
-***(add imagem de capa do website)***
+![imagem-capa](image.png)
 
 ## Índice
 
@@ -46,10 +46,10 @@ História de usuário 2:
 * Como iniciante na academia, quero me empoderar das técnicas de alongamento e mobilidade através do que mulheres mais experientes em musculação compartilham, para que assim eu possa evoluir no meus treinos.
 
 ## 3. Status do projeto
-**Em andamento 🔨**
+**Finalizado ✔**
 
 ## 4. Funcionalidades e demonstração da aplicação
-Ao realizar os testes de usabilidade com usuárias diferentes e passarmos um formulário de sugestões, recebemos alguns feedbacks: melhorar visibilidade do placeholder, reordenar forms (nome, sobrenome, e-mail, senha), trocar ou adicionar ícone ao “incrível” opção de curtir e adicionar ícone de editar ou excluir ao invés de três pontos. Realizamos essas melhorias ***+ (add ao concluir os ajustes).***
+Ao realizar os testes de usabilidade com usuárias diferentes e passarmos um formulário de sugestões, recebemos alguns feedbacks: melhorar visibilidade do placeholder, reordenar forms (nome, sobrenome, e-mail, senha), trocar ou adicionar ícone ao “incrível” opção de curtir e adicionar ícone de editar ou excluir ao invés de três pontos. Realizamos essas melhorias transformando o botão de curtir em uma estrela e fazendo ajustes no CSS para melhor visibilidade.
 
 No acesso inicial do site os usuários serão direcionados à página de login, a qual possui uma introdução dos objetivo da nossa rede social. Caso a usuária já tenha conta, ela realizará o acesso. Caso contrário, pode-se criar uma nova conta ou ainda logar-se com Google. Acessando a timeline ou feed, visualiza-se posts de outros usuárias com os quais se pode integir e criar seu próprio post.
 
@@ -64,7 +64,7 @@ As aplicações deste projeto são:
 ### 5. Acesso ao projeto
 Para acessar o ***fithub WOMAN*** clique aqui: (add link após deploy no github pages).
 ### 6. Tecnologias utilizadas
-![html](img-readme/html-icon.png) ![css](img-readme/css-icon.png) ![js](img-readme/js-icon.png) ![git](img-readme/git-icon.png) ![github](img-readme/gitHub-icon.png) ***(add  logo firebase).***
+![html](img-readme/html-icon.png) ![css](img-readme/css-icon.png) ![js](img-readme/js-icon.png) ![git](img-readme/git-icon.png) ![github](img-readme/gitHub-icon.png)![vscode](image-4.png)![firebase](image-3.png)
 
 ### 7. Desenvolvedoras
 Dara Coelho  [LinkedIn](https://www.linkedin.com/in/dara-coelho/) | [GitHub](https://github.com/Dahbarbara)
