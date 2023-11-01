@@ -16,7 +16,7 @@ export default () => {
     </section>
     <form class='input-group'>
       <div class='forms'>
-        <input type='email' class='...' id='email' required></input>
+        <input type='email' class='input-login' id='email' required></input>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label for='email' class='input-group__label'>E-mail address</label>
@@ -26,7 +26,6 @@ export default () => {
         <span class="highlight"></span>
         <span class="bar"></span>
         <label for='password' class='input-group__label'>Password</label>
-       <a href='#forgot' id='btn-recover-password'>Forgot your password?</a>
       </div>
     </form>
     <button type='button' class='sign-in-button' id='sign-in'>Sign In</button>

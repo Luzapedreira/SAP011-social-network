@@ -27,6 +27,13 @@ main{
   text-align: justify;
 }
 
+.input-form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1%;
+}
+
 .sign-up-button {
   display: inline-block;
   padding: 10px 20px;
@@ -63,7 +70,7 @@ label {
   border-color: #bf1922;
 }
 
-input {
+.input-registro {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -141,21 +148,10 @@ footer{
   position: sticky;
 }
 
-logo{
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
-
-.figure{
-  align-items: center;
-  width: 100%;
-}
-
 @media screen and (max-width: 480px) {
 
-.imput-register{
-  width: 100%;
+.input-registro{
+  width: 100vw;
 }
 
 }

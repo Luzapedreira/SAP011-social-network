@@ -6,36 +6,35 @@ export default () => {
   container.classList.add('container');
 
   container.innerHTML = `
-  <figure class="logo"> <img src="https://i.pinimg.com/750x/f8/c0/ab/f8c0ab491204f96cde244db38d199540.jpg" alt="logo-fithub" /> </figure>
   <article class='register-page'>
     <section class='about-register'>
       <h4 id='about-regiser'> Sign up, share your routine and be inspired by the healthy habits of other women. </h4><br>
     </section>
     <section class='page-register'>
     </section>
-    <form class='input-register' id='input-register'>
+    <form class='input-form' id='input-register'>
       <div class='forms'>
         <span class='highlight'></span>
         <span class='bar'></span>
-        <input type='text' id='name' class='full-name' required></input>
+        <input type='text' id='name' class='input-registro' required></input>
         <label for='name' class='input-group__label'>Full name</label>
       </div>
       <div class='forms'>
         <span class='highlight'></span>
         <span class="bar"></span>
-        <input type='text' id='nickname' class='nickname' required></input>
+        <input type='text' id='nickname' class='input-registro' required></input>
         <label for='nickname' class='input-group__label'>Nickname</label>
       </div>
       <div class='forms'>
         <span class='highlight'></span>
         <span class='bar'></span> 
-        <input type='email' id='email' class='input-register' required></input>
+        <input type='email' id='email' class='input-registro' required></input>
         <label for='email' class='input-group__label'>E-mail</label>
       </div>
       <div class='forms'>
         <span class='highlight'></span>
         <span class='bar'></span>   
-        <input type='password' id='password' class='password' required></input>
+        <input type='password' id='password' class='input-registro' required></input>
         <label for='password' class='input-group__label'>Password</label>
       </div>
       <button type='submit' id='sign-up-button' class='sign-up-button'>Sign Up</button>

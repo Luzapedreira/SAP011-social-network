@@ -56,8 +56,8 @@ export default async () => {
      <div id="modal" class="hide">
       <p class="message-delete">Are you sure?</p> 
     <div class="button-modal">
-    <button id="cancel-modal">Cancel</button>
-   <button id="delete-modal">Delete</button>
+    <button id="button-modal">Cancel</button>
+   <button id="button-modal">Delete</button>
        
       </div>
     </div>  
