@@ -57,7 +57,6 @@ export default () => {
       // eslint-disable-next-line no-alert
       alert('Please fill in all fields');
     } else {
-      console.log(password);
       newUser(email, nickname, password)
         .then(() => users(name, nickname, email))
         .then(() => {
