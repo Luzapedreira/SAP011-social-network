@@ -62,7 +62,7 @@ As aplicações deste projeto são:
 
 
 ### 5. Acesso ao projeto
-Para acessar o ***fithub WOMAN*** clique aqui: [https://fithub-woman.web.app]
+Para acessar o ***fithub WOMAN*** clique aqui: https://fithub-woman.web.app
 ### 6. Tecnologias utilizadas
 ![html](img-readme/html-icon.png) ![css](img-readme/css-icon.png) ![js](img-readme/js-icon.png) ![git](img-readme/git-icon.png) ![github](img-readme/gitHub-icon.png) ***(add  logo firebase).***
 
