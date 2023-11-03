@@ -25,6 +25,9 @@ main{
   align-items: center;
   display: inline-block;
   text-align: justify;
+  margin-bottom:30px;
+  align-items: center;
+  display: inline-block;
 }
 
 .sign-up-button {

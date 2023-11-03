@@ -8,7 +8,7 @@ export default () => {
   container.innerHTML = `
   <article class='register-page'>
     <section class='about-register'>
-      <p id='about-regiser'> Sign up, share your routine and be inspired by the healthy habits of other women. </p><br>
+      <h4 id='about-regiser'> Sign up, share your routine and be inspired by the healthy habits of other women. </h4><br>
     </section>
     <section class='page-register'>
     </section>
@@ -40,7 +40,7 @@ export default () => {
       <button type='submit' id='sign-up-button' class='sign-up-button'>Sign Up</button>
     </form>
     <section class='login-input'>
-      <p>Already registered?</p><br>
+      <h4>Already registered?</h4><br>
       <button class='sign-in-button' id='login'>Login</button>
     </section>  
   </article>

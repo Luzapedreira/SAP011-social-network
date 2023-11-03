@@ -31,7 +31,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 50px 50px 50px;
+  padding: 10px 50px 15px 50px;
 }
 
 /*.page-login {
