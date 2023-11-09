@@ -46,7 +46,7 @@ História de usuário 2:
 * Como iniciante na academia, quero me empoderar das técnicas de alongamento e mobilidade através do que mulheres mais experientes em musculação compartilham, para que assim eu possa evoluir no meus treinos.
 
 ## 3. Status do projeto
-**Em andamento 🔨**
+**Finalizado ✔**
 
 ## 4. Funcionalidades e demonstração da aplicação
 Ao realizar os testes de usabilidade com usuárias diferentes e passarmos um formulário de sugestões, recebemos alguns feedbacks: melhorar visibilidade do placeholder, reordenar forms (nome, sobrenome, e-mail, senha), trocar ou adicionar ícone ao “incrível” opção de curtir e adicionar ícone de editar ou excluir ao invés de três pontos. Realizamos essas melhorias ***+ (add ao concluir os ajustes).***
